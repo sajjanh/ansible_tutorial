@@ -8,13 +8,13 @@
     dnf:
       update_only: yes
       update_cache: yes
-   when: ansible_disstribution == "CentOS"
+   when: ansible_distribution == "CentOS"
 
   - name: install updates (Ubuntu)
     apt:
       upgrade: dist
       update_cache: yes
-    when: ansible_disstribution == "Ubuntu"
+    when: ansible_distribution == "Ubuntu"
 
 - hosts: web_servers
   become: true
@@ -26,7 +26,7 @@
         - apache2
         - libapache2-mod-php
       state: latest
-    when: ansible_distribution == "Ubnutu"
+    when: ansible_distribution == "Ubuntu"
 
   - name: install apache and php for CentOS servers
     dnf:
@@ -34,4 +34,4 @@
         - httpd
         - php
       state: latest
-    when: ansible_disstribution == "CentOS"
+    when: ansible_distribution == "CentOS"
