@@ -5,9 +5,9 @@
   tasks:
 
   - name: install apache and php packages
-    package:
+    ansible.builtin.package:
       name:
         - "[[ apache_package }}"
         - "{{ php_package }}"
-      state: latest
+      state: absent
       update_cache: yes
