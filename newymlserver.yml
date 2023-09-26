@@ -8,7 +8,7 @@
     dnf:
       update_only: yes
       update_cache: yes
-   when: ansible_distribution == "CentOS"
+    when: ansible_distribution == "CentOS"
 
   - name: install updates (Ubuntu)
     apt:
@@ -33,5 +33,4 @@
       name:
         - httpd
         - php
-      state: latest
     when: ansible_distribution == "CentOS"
