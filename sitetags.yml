@@ -57,6 +57,31 @@
         - php
     when: ansible_distribution == "CentOS"
 
+  - name: Start httpd (CentOS)
+    tags: apache,centos,httpd
+    service:
+      name: httpd
+      state: started
+      enabled: yes
+    when: ansible_distribution == "CentOS" 
+
+  #- name: Change e-mail address for admin
+   # tag: apache,apache2,httpd
+    #lineinfile:
+     # path: /etc/httpd/conf/httpd.conf
+      #regexp: '^ServerAdmin'
+      #line: ServerAdmin somebody@somwhere.net
+    #when: ansible_distribution == "CentOS"
+     #register: httpd
+
+ # - name: restart httpd (CentOS)
+   # tags: apache,centos,httpd
+   # service:
+     # name: httpd
+     # state: restarted
+   # when: httpd.changed
+
+ 
   - name: copy default html file for sitetags
     tags: apache,apache2,httpd
     copy:
