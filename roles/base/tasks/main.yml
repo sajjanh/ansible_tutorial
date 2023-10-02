@@ -1,0 +1,4 @@
+- name: add ssh key for Hooda
+  authorized_key:
+    user: Hooda
+    key: "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGRqPEGqDghxsQUJhw26NkrVKDudoTJlIGtgGQVormbF NewAnsible"

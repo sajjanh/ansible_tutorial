@@ -21,25 +21,25 @@
 - hosts: all
   become: true
   roles:
-  - base
+    - base
 
 - hosts: workstations
   become: true
-  roles
-   - workstations:
+  roles:
+    - workstations
 
 - hosts: web_servers
   become: true
   roles:
-   - web_servers
+    - web_servers
 
 - hosts: db_servers
   become: true
   roles:
-   - db_servers
+    - db_servers
 
 - hosts: file_servers
   become: true
   roles:
-   - file_servers
+    - file_servers
 
